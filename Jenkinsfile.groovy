@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    
+
     stages{
         stage('Get java version'){
             parallel {
@@ -9,10 +9,10 @@ pipeline{
                         echo "Echo test"
                     }
                 }
-                stage('Java Version'){
+                stage('Unit Test'){
                     steps {
-                        echo "the version of java is : "
-                        sh 'java -version'
+                        echo "Unit Test "
+                        junit 'target/surefire-reports/*.xml'
                     }
                 }
             }
