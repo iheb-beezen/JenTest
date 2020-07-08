@@ -12,7 +12,7 @@ pipeline{
                 stage('Unit Test'){
                     steps {
                         echo "Unit Test "
-                        junit '/src/test/java/org/sid/*.java'
+                        junit '/src/test/java/org/sid/*.xml'
                     }
                 }
             }
