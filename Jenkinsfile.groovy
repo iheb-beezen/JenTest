@@ -12,12 +12,7 @@ pipeline{
                 stage('Unit Test'){
                     steps {
                         echo "Unit Test "
-                        junit 'target/surefire-reports/*.xml'
-                    }
-                    post{
-                        always{
-                            archiveArtifacts artifacts:'target/jenk.jar'
-                        }
+                        junit '/src/test/java/org/sid/*.java'
                     }
                 }
             }
@@ -25,4 +20,10 @@ pipeline{
 
         
     }
+    
+                    post{
+                        always{
+                            archiveArtifacts artifacts:'target/jenk.jar'
+                        }
+                    }
 }
