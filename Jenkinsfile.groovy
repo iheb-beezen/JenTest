@@ -1,13 +1,20 @@
 pipeline{
     agent any
-
-    tools{
-        JDK 'jdk'
-    }
+    
     stages{
         stage('Get java version'){
-            steps{
-                sh 'java -version'
+            parallel {
+                stage ('Echo'){
+                    steps{
+                        echo "Echo test"
+                    }
+                }
+                stage('Java Version'){
+                    steps {
+                        echo "the version of java is : "
+                        sh 'java -version'
+                    }
+                }
             }
         }
 
