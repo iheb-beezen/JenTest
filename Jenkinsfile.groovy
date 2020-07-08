@@ -13,7 +13,7 @@ pipeline{
                     steps {
                         echo "Unit Test "
                         //junit 'target/surefire-reports/*.xml'
-                        archiveArtifacts artifacts:'target/*.jar'
+                        archiveArtifacts artifacts:'target/jenk.jar'
                     }
                 }
             }
