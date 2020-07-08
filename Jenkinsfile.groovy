@@ -2,12 +2,12 @@ pipeline{
     agent any
 
     tools{
-        maven 'maven2020'
+        JDK 'jdk'
     }
     stages{
-        stage('Get maven version'){
+        stage('Get java version'){
             steps{
-                sh 'mvn --version'
+                sh 'java -version'
             }
         }
 
