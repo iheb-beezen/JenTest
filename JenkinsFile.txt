@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+	
+	tools{
+		maven 'maven2020'
+	}
+    stages {
+        stage('Get maven version') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
+}
