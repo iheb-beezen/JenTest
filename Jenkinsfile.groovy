@@ -12,7 +12,8 @@ pipeline{
                 stage('Unit Test'){
                     steps {
                         echo "Unit Test "
-                        junit 'target/surefire-reports/*.xml'
+                        //junit 'target/surefire-reports/*.xml'
+                        archiveArtifacts artifacts:'target/*.jar'
                     }
                 }
             }
